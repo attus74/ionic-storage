@@ -1,0 +1,18 @@
+{
+  "name": "@attus/ionic-storage",
+  "version": "1.0.0",
+  "description": "Ionic Storage Service",
+  "keywords": ["Angular", "Ionic"],
+  "peerDependencies": {
+    "@ionic/angular": "^5.0",
+    "@ionic/storage": "^2.3"
+  },
+  "dependencies": {
+    "tslib": "^1.10.0"
+  },
+  "author": {
+    "name": "Attila Németh",
+    "email": "attila.nemeth@ubgnet.de"
+  },
+  "license": "GPL-3.0"
+}
