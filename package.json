@@ -14,5 +14,13 @@
     "name": "Attila Németh",
     "email": "attila.nemeth@ubgnet.de"
   },
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "homepage": "https://github.com/attus74/ionic-storage",
+  "bugs": {
+    "url": "https://github.com/attus74/ionic-storage/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/attus74/ionic-storage.git"
+  }
 }
