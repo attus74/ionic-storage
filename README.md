@@ -20,4 +20,6 @@ constructor(private cacheService: IonicCacheService)
 
 this.cacheService.set(key, value, expire);
 
+this.cacheService.get(key).then(value => {});
+
 ```

@@ -50,13 +50,14 @@ export class IonicCacheService {
     return new Promise((resolve, reject) => {
       this.storage.get(this.prefix + key).then((cache: IonicCacheData) => {
         const now = new Date();
-        if (cache.expire > now) {
+        const expire = new Date(cache.expire);
+        if (expire > now) {
           resolve(cache.data);
         } else {
           this.storage.remove(this.prefix + key);
           reject();
         }
-      }).catch(() => {
+      }).catch((error) => {
         reject();
       });
     });
