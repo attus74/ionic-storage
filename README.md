@@ -1,4 +1,4 @@
-# IonicStorage
+# Ionic Storage
 
 Cache and Token Service for Ionic-Angular
 

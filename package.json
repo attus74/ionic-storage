@@ -4,7 +4,8 @@
   "description": "Ionic Storage Service",
   "keywords": [
     "Angular",
-    "Ionic"
+    "Ionic",
+    "Cache"
   ],
   "peerDependencies": {
     "@ionic/angular": "^5.0",
