@@ -6,6 +6,8 @@ import { Storage } from '@ionic/storage';
 })
 export class IonicCacheService {
 
+  private prefix: string = 'io-cache-'
+
   constructor(private storage: Storage) { }
 
   /**
@@ -29,10 +31,33 @@ export class IonicCacheService {
         data: data,
         expire: ex,
       };
-      this.storage.set('ubg-cache-' + key, cache).then(() => {
+      this.storage.set(this.prefix + key, cache).then(() => {
         resolve(null);
       }).catch((error) => {
         reject(error);
+      });
+    });
+  }
+
+  /**
+   * Get data from Cache
+   * @param key 
+   *  Cache Key
+   * 
+   * The request is rejected, if no data exists or data is expired.
+   */
+  get(key: string): Promise<IonicCacheData> {
+    return new Promise((resolve, reject) => {
+      this.storage.get(this.prefix + key).then((cache: IonicCacheData) => {
+        const now = new Date();
+        if (cache.expire > now) {
+          resolve(cache.data);
+        } else {
+          this.storage.remove(this.prefix + key);
+          reject();
+        }
+      }).catch(() => {
+        reject();
       });
     });
   }
