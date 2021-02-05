@@ -46,7 +46,7 @@ export class IonicCacheService {
    * 
    * The request is rejected, if no data exists or data is expired.
    */
-  get(key: string): Promise<IonicCacheData> {
+  get(key: string): Promise<any> {
     return new Promise((resolve, reject) => {
       this.storage.get(this.prefix + key).then((cache: IonicCacheData) => {
         const now = new Date();
