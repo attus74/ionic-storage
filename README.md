@@ -1,24 +1,23 @@
 # IonicStorage
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.12.
+Cache and Token Service for Ionic-Angular
 
-## Code scaffolding
+Usage in Service:
 
-Run `ng generate component component-name --project ionic-storage` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ionic-storage`.
-> Note: Don't forget to add `--project ionic-storage` or else it will be added to the default project in your `angular.json` file. 
+```ts
+constructor(private tokenService: IonicTokenService)
 
-## Build
+this.tokenService.getRefreshToken().then(token => {});
 
-Run `ng build ionic-storage` to build the project. The build artifacts will be stored in the `dist/` directory.
+this.tokenService.setRefreshToken(tokenString);
 
-## Publishing
+this.tokenService.deleteRefreshToken();
+```
 
-After building your library with `ng build ionic-storage`, go to the dist folder `cd dist/ionic-storage` and run `npm publish`.
+```ts
 
-## Running unit tests
+constructor(private cacheService: IonicCacheService)
 
-Run `ng test ionic-storage` to execute the unit tests via [Karma](https://karma-runner.github.io).
+this.cacheService.set(key, value, expire);
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
